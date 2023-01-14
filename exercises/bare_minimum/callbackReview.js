@@ -10,11 +10,9 @@ var pluckFirstLineFromFile = function (filePath, callback) {
   // TODO
   fs.readFile(filePath, 'utf-8', (err, data) => {
     if (err) {
-      console.log('heres the error', err);
       callback(err);
     } else {
       var firstLine = (data.match(/^(.*)$/m) || [])[1] || '';
-      console.log('here is the firstline: ', firstLine);
       callback(null, firstLine);
     }
   });
